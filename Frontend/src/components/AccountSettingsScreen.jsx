@@ -1,49 +1,53 @@
-const AccountSettingsScreen = ({ onNavigate }) => {
+const AccountSettingsScreen = () => {
   return (
-    <div className="h-full bg-white px-8 py-12">
-      {/* Header */}
-      <div className="text-left mb-8">
-        <h1 className="text-xl font-semibold text-gray-900">Account Settings</h1>
-      </div>
+    <div className="flex justify-center min-h-screen bg-[#8C8989FF">
+      {/* Mobile frame */}
+      <div className="w-full max-w-md bg-white min-h-screen">
 
-      {/* Profile Section */}
-      <div className="flex items-start space-x-4 mb-8">
-        {/* Profile Image */}
-        <div className="relative">
-          <div className="w-16 h-16 bg-gradient-to-br from-purple-400 via-pink-400 to-red-400 rounded-full overflow-hidden flex items-center justify-center">
-            <span className="text-white font-bold text-xl">M</span>
+        {/* Header */}
+        <header className="px-4 pt-4 pb-4">
+          <h1 className="text-[15px] font-semibold text-gray-900">Account Settings</h1>
+        </header>
+
+        {/* Content panel (light grey) */}
+        <section className="bg-gray-50 px-6 pt-5 pb-6">
+          {/* Profile row */}
+          <div className="flex items-start">
+            {/* Avatar with purple camera badge */}
+            <div className="relative mr-4">
+              <img
+                src="download.png"
+                alt="Profile"
+                className="w-16 h-16 rounded-full object-cover"
+              />
+              <span className="absolute -bottom-1 left-10 w-6 h-6 rounded-full bg-violet-600 text-white flex items-center justify-center ring-2 ring-gray-50">
+                {/* Camera icon */}
+                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="#fff" stroke="#ccc" strokeWidth="2">
+                  <path d="M4 8h3l2-3h6l2 3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2z" />
+                  <circle cx="12" cy="13" r="3.5" />
+                </svg>
+              </span>
+            </div>
+
+            {/* Name + email */}
+            <div className="pt-1">
+              <p className="text-[14px] font-semibold text-gray-900 leading-none">Marry Doe</p>
+              <p className="text-[12px] text-gray-600 mt-1 leading-none">Marry@Gmail.Com</p>
+            </div>
           </div>
-          {/* Verified Badge */}
-          <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
-            <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
-          </div>
-        </div>
 
-        {/* Profile Info */}
-        <div className="flex-1">
-          <h2 className="text-lg font-semibold text-gray-900 mb-1">Marry Doe</h2>
-          <p className="text-gray-500 text-sm">Marry@Gmail.Com</p>
-        </div>
-      </div>
+          {/* Description */}
+          <p className="mt-6 text-[12px] text-gray-600">
+            Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy Eirmod
+            Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam
+          </p>
 
-      {/* Description */}
-      <div className="text-gray-500 text-sm leading-relaxed mb-8">
-        Lorem Ipsum Dolor Sit Amet, Consectetur Sadipscing Elitr, Sed Diam Nonumy Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam
-      </div>
+          {/* Dashed divider (exactly like the left image) */}
+        </section>
+          <div className="border-b border-gray-300 border-dashed"></div>
 
-      {/* Back Button */}
-      <div className="mt-auto">
-        <button
-          onClick={() => onNavigate('welcome')}
-          className="text-blue-600 hover:text-blue-700 font-medium transition duration-200 flex items-center"
-        >
-          <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Back to Welcome
-        </button>
+        {/* Extra dashed track below to match the left screen rhythm */}
+        <div className="h-105 bg-gray-50 border-b border-gray-300 border-dashed"></div>
       </div>
     </div>
   );
