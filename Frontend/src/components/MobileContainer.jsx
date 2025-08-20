@@ -1,10 +1,8 @@
 const MobileContainer = ({ children }) => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden">
-        <div className="relative h-screen max-h-[800px]">
-          {children}
-        </div>
+    <div className="min-h-screen bg-[#FFFFFFFF] flex items-center justify-center p-4">
+      <div className="w-full h-full max-w-[350px] bg-white shadow-lg overflow-hidden border border-gray-100">
+        <div className="h-[700px] relative">{children}</div>
       </div>
     </div>
   );
