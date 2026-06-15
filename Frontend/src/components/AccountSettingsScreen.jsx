@@ -20,9 +20,9 @@ const AccountSettingsScreen = () => {
                 alt="Profile"
                 className="w-16 h-16 rounded-full object-cover"
               />
-              <span className="absolute -bottom-1 left-10 w-6 h-6 rounded-full bg-violet-600 text-white flex items-center justify-center ring-2 ring-gray-50">
+              <span className="absolute -bottom-1 left-10 w-6 h-6 rounded-full bg-violet-600 text-white flex items-center justify-center">
                 {/* Camera icon */}
-                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="#fff" stroke="#ccc" strokeWidth="2">
+                <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="#fff" stroke="#7C3AED">
                   <path d="M4 8h3l2-3h6l2 3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2z" />
                   <circle cx="12" cy="13" r="3.5" />
                 </svg>

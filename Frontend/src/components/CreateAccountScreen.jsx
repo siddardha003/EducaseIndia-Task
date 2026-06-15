@@ -45,11 +45,11 @@ const CreateAccountScreen = ({ onNavigate }) => {
         <form onSubmit={handleSubmit} className="space-y-5 relative pb-20 bg-gray-100">
           {/* Input with label inside */}
           {[
-            { label: "Full Name*", name: "fullName", type: "text" },
-            { label: "Phone number*", name: "phoneNumber", type: "tel" },
-            { label: "Email address*", name: "email", type: "email" },
-            { label: "Password*", name: "password", type: "password" },
-            { label: "Company name", name: "companyName", type: "text" },
+            { label: "Full Name", name: "fullName", type: "text", required: true },
+            { label: "Phone number", name: "phoneNumber", type: "tel", required: true },
+            { label: "Email address", name: "email", type: "email", required: true },
+            { label: "Password", name: "password", type: "text", required: true },
+            { label: "Company name", name: "companyName", type: "text", required: false },
           ].map((field, idx) => (
             <div
               key={idx}
@@ -57,13 +57,14 @@ const CreateAccountScreen = ({ onNavigate }) => {
             >
               <label className="absolute -top-2 left-2 bg-gray-100 px-1 text-xs text-violet-600">
                 {field.label}
+                {field.required && <span className="text-red-600 mr-2">*</span>}
               </label>
               <input
                 type={field.type}
                 name={field.name}
                 value={formData[field.name]}
                 onChange={handleInputChange}
-                className="w-full bg-transparent focus:outline-none text-gray-800 text-sm mt-3"
+                className="w-full bg-transparent focus:outline-none text-gray-800 text-sm mt-2"
                 required={field.label.includes("*")}
               />
             </div>
@@ -72,7 +73,7 @@ const CreateAccountScreen = ({ onNavigate }) => {
           {/* Are you an Agency */}
           <div>
             <p className="text-sm font-medium text-gray-700 mb-2">
-              Are you an Agency?*
+              Are you an Agency?<span className="text-red-600">*</span>
             </p>
             <div className="flex space-x-6">
               <label className="flex items-center">
